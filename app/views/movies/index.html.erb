@@ -1,0 +1,41 @@
+  <br><hr><br>
+   <h3>Total Movie : <%= @movie.count%></h3>
+   <br><hr><br>
+   
+    <% @movie.each do |movie| %>
+      <section class="movie">
+      <div class="image">
+        <%= image_tag movie.image_file_name %>
+      </div>
+        <div class="summary">
+            <h2>Name : <%= link_to movie.name, movie_path(movie) %></h2> 
+            <h3>Rating <%= movie.rating%></h3>
+            <p>Total Gross :<%= total_gross(movie) %></p>
+            <p>Description : <%= truncate(movie.description,length:40,separator:' ') %></p>
+            <p>Released Date : <%= year_of(movie) %></p>
+            <p>Director : <%= movie.director %> </p>
+            <p>Duration : <%= movie.duration %></p>
+            <div>
+              <%= link_to "WRITE REVIEW!", new_movie_review_path(movie), class: "review" %> 
+            </div>
+            <div class="reviews">
+                <%# <%= average_stars(movie) %> 
+                <%= link_to pluralize(movie.reviews.size,"review"),movie_reviews_path(movie) %>
+            </div>
+            <span class="stars">
+              <%= render "senders/stars", percent: movie.average_stars_as_percent %>
+            </span>
+            <hr><br>
+        </div>
+      </section>
+    <% end %>   
+
+  <%# <section>
+      <%= link_to "Write Review", movie_review_url(1/reviews) %>
+   <%# </section>   %>
+  <% if  current_user_admin? %>
+    <section class="admin">
+      <%= link_to "ADD NEW MOVIE", new_movie_path, class:"button"%>
+    </section>
+  <% end %>
+    

@@ -1,0 +1,22 @@
+<h1>Show Review</h1>
+
+<ul class="reviews">
+    <li>
+        <%= render "senders/stars", percent: @review.stars_as_percent %>
+            <p>
+                Name: <%= @review.name %> 
+                <span class="date"> 
+                Time: <%= time_ago_in_words(@review.created_at) %> ago
+            </span> 
+            </p>
+            <p>
+                Comment: <%= @review.comment %>
+            </p>
+            <%= link_to "Edit Review", edit_movie_review_path(@movie,@review), class:"button"%>
+            <%= link_to "Delete Review",movie_review_path(@movie,@review), class: "button",
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure delete review ?"} %><br><br>
+            <%= link_to "All Reviews",movie_reviews_path(@movie), class: "button"%>
+    <li>    
+</ul>
+
+  

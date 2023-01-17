@@ -1,0 +1,65 @@
+    <section class="movie">
+         <div class="image">
+            <%= image_tag @movie.image_file_name %>
+        <% if current_user %>
+            <div class="faves">
+                <br>
+              <%= fave_or_unfave_button(@movie,@favorite) %>
+                <div class="count">
+                    <%= @fans.size %>
+                </div>
+            </div>
+        <%end%>
+        
+        <aside>
+            <% if @fans.present? %>
+                <h4>Fans</h4>
+                <ul>
+                    <% @fans.each do |user| %>
+                        <li>
+                            <%= link_to user.name, user %>
+                        </li>
+                    <%end%>
+                </ul>
+            <% end %>
+            <% if @genres.present? %>
+                <h4>Genres</h4>
+                <ul>
+                    <% @genres.each do|g|%>
+                        <li><%= g.name %></li>
+                    <%end%>
+                </ul>
+            <% end %>
+        </aside> 
+        </div> 
+        <div class="summary">
+            <h2>Name : <%= @movie.name%></h2>
+            <h3>Rating <%= @movie.rating%></h3>
+            <p>Total Gross :<%= total_gross(@movie) %></p>
+            <p>Description : <%= truncate(@movie.description,length:40,separator:' ') %></p>
+            <p>Released Date : <%= year_of(@movie) %></p>
+            <p>Director : <%= @movie.director%></p>
+            <p>Duration : <%= @movie.duration%></p>
+            <div class="reviews">
+                <p>Average Stars : <%= average_stars(@movie) %></p>
+                <%# <%= link_to pluralize(@movie.reviews.size,"review"),movie_reviews_path(@movie) %> 
+            </div>
+            <div class="reviews">
+                <%= link_to "WRITE REVIEW!", new_movie_review_path(@movie), class: "review" %> <br>
+                <% if !review_size_zero?(@movie.reviews) %>
+                    <%= link_to pluralize(@movie.reviews.size, "To See Review"), movie_reviews_path(@movie)%>
+                <% end %>
+            </div>
+            <hr><br>
+        </div>
+    </section>
+
+<% if current_user_admin? %>
+    <section class="admin">
+        <%= link_to "edit", edit_movie_path(@movie), class:"button"%>
+         <%# <%= link_to "DELETE", movie_path(@movie), class:"button",
+     data: {turbo_method: :delete , turbo_confirm: "ARE YOU SURE ?"} %> 
+         <%= link_to "Delete", movie_path(@movie), class: "button",
+         data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    </section>
+<% end %>

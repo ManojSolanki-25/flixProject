@@ -1,0 +1,18 @@
+<h2>REVIEW FOR <%= link_to @movie.name.capitalize, @movie%></h2>
+<ul class="reviews">
+    <% @review.each do |review| %>
+        <li>
+            <%= render "senders/stars", percent: review.stars_as_percent %>
+            <p>
+                <%= link_to review.user.name, review.user %> 
+                <span class="date"> 
+                    <%= time_ago_in_words(review.created_at) %> ago
+                </span> 
+            </p>
+            <p>
+                <%= review.comment %>
+            </p> 
+        </li>
+        <hr>
+    <% end %>
+<ul>
