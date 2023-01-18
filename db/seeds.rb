@@ -11,8 +11,8 @@ Movie.create!([
     rating: 'PG-13',
     total_gross: 1_223_641_414,
     director: 'Anthony Russo',
-    duration: '181 min',
-    image_file_name: 'avengers-end-game.png'
+    duration: '181 min'
+    
   },
   {
     name: 'Captain Marvel',
@@ -24,8 +24,8 @@ Movie.create!([
     rating: 'PG-13',
     total_gross: 1_110_662_849,
     director: 'Anna Boden',
-    duration: '124 min',
-    image_file_name: 'captain-marvel.png'
+    duration: '124 min'
+    
   },
   {
     name: 'Black Panther',
@@ -37,8 +37,8 @@ Movie.create!([
     rating: 'PG-13',
     total_gross: 1_346_913_161,
     director: 'Ryan Coogler',
-    duration: '134 min',
-    image_file_name: 'black-panther.png'
+    duration: '134 min'
+    
   },
   {
     name: 'Avengers: Infinity War',
@@ -50,8 +50,8 @@ Movie.create!([
     rating: 'PG-13',
     total_gross: 2_048_359_754,
     director: 'Anthony Russo',
-    duration: '149 min',
-    image_file_name: 'avengers-infinity-war.png'
+    duration: '149 min'
+    
   },
   {
     name: 'Green Lantern',
@@ -63,8 +63,8 @@ Movie.create!([
     rating: 'PG-13',
     total_gross: 219_851_172,
     director: 'Martin Campbell',
-    duration: '114 min',
-    image_file_name: 'green-lantern.png'
+    duration: '114 min'
+    
   },
   {
     name: 'Fantastic Four',
@@ -76,8 +76,8 @@ Movie.create!([
     rating: 'PG-13',
     total_gross: 168_257_860,
     director: 'Josh Trank',
-    duration: '100 min',
-    image_file_name: 'fantastic-four.png'
+    duration: '100 min'
+    
   },
   {
     name: 'Iron Man',
@@ -91,8 +91,8 @@ Movie.create!([
     rating: 'PG-13',
     total_gross: 585_366_247,
     director: 'Jon Favreau',
-    duration: '126 min',
-    image_file_name: 'ironman.png'
+    duration: '126 min'
+    
   },
   {
     name: 'Superman',
@@ -106,8 +106,8 @@ Movie.create!([
     rating: 'PG',
     total_gross: 300_451_603,
     director: 'Richard Donner',
-    duration: '143 min',
-    image_file_name: 'superman.png'
+    duration: '143 min'
+    
   },
   {
     name: 'Spider-Man',
@@ -122,8 +122,8 @@ Movie.create!([
     rating: 'PG-13',
     total_gross: 825_025_036,
     director: 'Sam Raimi',
-    duration: '121 min',
-    image_file_name: 'spiderman.png'
+    duration: '121 min'
+    
   },
   {
     name: 'Batman',
@@ -136,8 +136,8 @@ Movie.create!([
     rating: 'PG-13',
     total_gross: 411_348_924,
     director: 'Tim Burton',
-    duration: '126 min',
-    image_file_name: 'batman.png'
+    duration: '126 min'
+    
   },
   {
     name: "Catwoman",
@@ -149,8 +149,8 @@ Movie.create!([
     rating: "PG-13",
     total_gross: 82_102_379,
     director: "Jean-Christophe 'Pitof' Comar",
-    duration: "101 min",
-    image_file_name: "catwoman.png"
+    duration: "101 min"
+    
   },
   {
     name: "Wonder Woman",
@@ -162,7 +162,7 @@ Movie.create!([
     rating: "PG-13",
     total_gross: 821_847_012,
     director: "Patty Jenkins",
-    duration: "141 min",
-    image_file_name: "wonder-woman.png"
+    duration: "141 min"
+    
   }
 ])
