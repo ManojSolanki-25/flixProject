@@ -74,6 +74,10 @@ class MoviesController < ApplicationController
 
     private
     
+    def empty_method
+
+    end
+    
     def set_movie
         @movie = Movie.find_by!(slug: params[:id])
     end
