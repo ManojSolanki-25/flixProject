@@ -7,6 +7,9 @@ class Movie < ApplicationRecord
     has_many :characterizations, dependent: :destroy
     has_many :genres, through: :characterizations
 
+    has_many :tags, as: :tagable 
+   #  has_many :hastags,through: :tags , source: :tagable , source_type: :movie, class_name: :movie
+
     has_one_attached :main_image
 
     validates :name, presence: true, uniqueness: true

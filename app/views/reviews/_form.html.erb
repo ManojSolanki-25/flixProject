@@ -1,4 +1,4 @@
-<%= form_with(model:review) do |f|%>
+	<%= form_with(model:review) do |f|%>
    <%= render "senders/errors",object: @review %> 
   <%= f.label :stars %>
   <% Review::STARS.each do |star| %>
@@ -13,3 +13,6 @@
 
   <%= f.submit "Post Review" %>
 <% end %>
+
+
+
